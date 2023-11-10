@@ -49,6 +49,16 @@ def handler(context: dict, request: Request) -> Response:
         status=200
     )
 
+
+@app.handler("/version")
+def handler(context: dict, request: Request) -> Response:
+    
+    return Response(
+        json = {"version": "1"}, 
+        status=200
+    )
+
+
 @app.handler("/exception")
 def handler(context: dict, request: Request) -> Response:
     # throw an exception 
