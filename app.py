@@ -16,6 +16,7 @@ print(f"number of cuda devices is: {torch.cuda.device_count()}")
 
 import logging
 
+
 app = Potassium("my_app")
 
 print("print above")
