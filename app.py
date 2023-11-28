@@ -27,8 +27,7 @@ logging.warn("log above")
 @app.init
 def init():
     
-    device = 0 if torch.cuda.is_available() else -1
-    devide = 'cuda'
+    device = 'cuda'
     model = pipeline('fill-mask', model='bert-base-uncased', device=device)
    
     context = {
@@ -48,6 +47,16 @@ def handler(context: dict, request: Request) -> Response:
 
     return Response(
         json = {"outputs": "done waiting"}, 
+        status=200
+    )
+    
+@app.handler("/device")
+def handler(context: dict, request: Request) -> Response:
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    return Response(
+        json = {"device": device}, 
         status=200
     )
 
