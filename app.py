@@ -27,7 +27,7 @@ logging.warn("log above")
 @app.init
 def init():
     
-    device = 'cuda'
+    device = 0 if torch.cuda.is_available() else -1
     model = pipeline('fill-mask', model='bert-base-uncased', device=device)
    
     context = {
