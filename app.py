@@ -3,7 +3,6 @@ from potassium import Potassium, Request, Response
 from transformers import pipeline
 import torch
 import time
-
 import utils
 
 ### testing a hack ###
