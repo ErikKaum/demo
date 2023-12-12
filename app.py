@@ -68,6 +68,14 @@ def handler(context: dict, request: Request) -> Response:
         status=200
     )
 
+@app.handler("/branch")
+def handler(context: dict, request: Request) -> Response:
+    
+    return Response(
+        json = {"branch": "not main"}, 
+        status=200
+    )
+    
 
 @app.handler("/exception")
 def handler(context: dict, request: Request) -> Response:
