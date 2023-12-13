@@ -6,6 +6,10 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 ARG TEST_BUILD_ARG
 RUN if [ -z "${TEST_BUILD_ARG}" ]; then echo "TEST_BUILD_ARG not set" && exit 1; fi
 
+ARG TEST_BUILD_ARG_2
+RUN if [ -z "${TEST_BUILD_ARG_2}" ]; then echo "TEST_BUILD_ARG_2 not set" && exit 1; fi
+
+
 WORKDIR /
 
 # Install git
