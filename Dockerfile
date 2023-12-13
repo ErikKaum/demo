@@ -1,5 +1,8 @@
 # This is a potassium-standard dockerfile, compatible with Banana
 
+ARG TEST_BUILD_ARG
+RUN if [ -z "${TEST_BUILD_ARG}" ]; then echo "TEST_BUILD_ARG not set" && exit 1; fi
+
 # Must use a Cuda version 11+
 # FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
 FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
