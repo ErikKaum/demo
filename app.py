@@ -9,6 +9,7 @@ import utils
 import os
 
 gpu_device_ids = [1, 2]
+
 gpu_devices = ','.join(str(id) for id in gpu_device_ids)
 os.environ['CUDA_VISIBLE_DEVICES'] = gpu_devices
 print(f"number of cuda devices is: {torch.cuda.device_count()}")
